@@ -1,18 +1,19 @@
 {
   "paths": {
-    "/info": {
+    "/about-page": {
       "get": {
         "deprecated": false,
-        "description": "Find all the info's records",
+        "description": "Find all the about-page's records",
         "responses": {
           "200": {
-            "description": "Retrieve info document(s)",
+            "description": "Retrieve about-page document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Info"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -51,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Info"
+          "About-page"
         ],
         "parameters": [
           {
@@ -194,14 +195,18 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single info record",
+        "description": "Update a single about-page record",
         "responses": {
           "200": {
-            "description": "Retrieve info document(s)",
+            "description": "Retrieve about-page document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Info"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -239,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "Info"
+          "About-page"
         ],
         "requestBody": {
           "description": "",
@@ -247,7 +252,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewInfo"
+                "$ref": "#/components/schemas/NewAbout-page"
               }
             }
           }
@@ -256,10 +261,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single info record",
+        "description": "Delete a single about-page record",
         "responses": {
           "200": {
-            "description": "deletes a single info based on the ID supplied",
+            "description": "deletes a single about-page based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -302,7 +307,7 @@
         },
         "summary": "",
         "tags": [
-          "Info"
+          "About-page"
         ],
         "parameters": []
       }
@@ -310,7 +315,7 @@
   },
   "components": {
     "schemas": {
-      "Info": {
+      "About-page": {
         "required": [
           "id"
         ],
@@ -318,96 +323,11 @@
           "id": {
             "type": "string"
           },
-          "first_name": {
+          "desc": {
             "type": "string"
           },
-          "last_name": {
-            "type": "string"
-          },
-          "location": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "resume": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name",
-                "hash",
-                "mime",
-                "size",
-                "url",
-                "provider"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "alternativeText": {
-                  "type": "string"
-                },
-                "caption": {
-                  "type": "string"
-                },
-                "width": {
-                  "type": "integer"
-                },
-                "height": {
-                  "type": "integer"
-                },
-                "formats": {
-                  "type": "object"
-                },
-                "hash": {
-                  "type": "string"
-                },
-                "ext": {
-                  "type": "string"
-                },
-                "mime": {
-                  "type": "string"
-                },
-                "size": {
-                  "type": "number"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "previewUrl": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "provider_metadata": {
-                  "type": "object"
-                },
-                "related": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "occupancy": {
-            "type": "string"
-          },
-          "socials": {
+          "skills": {
             "type": "object"
-          },
-          "avatar": {
-            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -415,28 +335,13 @@
           }
         }
       },
-      "NewInfo": {
+      "NewAbout-page": {
         "properties": {
-          "first_name": {
+          "desc": {
             "type": "string"
           },
-          "last_name": {
-            "type": "string"
-          },
-          "location": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "occupancy": {
-            "type": "string"
-          },
-          "socials": {
+          "skills": {
             "type": "object"
-          },
-          "avatar": {
-            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -452,9 +357,5 @@
       }
     }
   },
-  "tags": [
-    {
-      "name": "Info"
-    }
-  ]
+  "tags": []
 }

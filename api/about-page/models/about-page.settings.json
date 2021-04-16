@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_pages",
+  "info": {
+    "name": "About Page",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "desc": {
+      "type": "text"
+    },
+    "skills": {
+      "type": "json"
+    }
+  }
+}
